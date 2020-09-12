@@ -37,21 +37,27 @@ public class MainActivity extends AppCompatActivity {
 //                    }
 //                });
         // 2 : Gui du lieu hashmap
-        HashMap<String, Integer> hashMap = new HashMap();
-        hashMap.put("Xe dap", 2);
-        hashMap.put("Xe hoi", 4);
-        hashMap.put("Xe ba gac", 3);
-        myRef.child("Phuongtien")
-                .setValue(hashMap)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(MainActivity.this, "Them du lieu thanh cong", Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(MainActivity.this, "That bai", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+//        HashMap<String, Integer> hashMap = new HashMap();
+//        hashMap.put("Xe dap", 2);
+//        hashMap.put("Xe hoi", 4);
+//        hashMap.put("Xe ba gac", 3);
+//        myRef.child("Phuongtien")
+//                .setValue(hashMap)
+//                .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        if (task.isSuccessful()){
+//                            Toast.makeText(MainActivity.this, "Them du lieu thanh cong", Toast.LENGTH_SHORT).show();
+//                        }else{
+//                            Toast.makeText(MainActivity.this, "That bai", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
+//        3 : Gui du lieu dang object
+//        myRef.child("Animal")
+//                .setValue(new Animal("Meo",3));
+//        4 : Gui du lieu anonymous id
+        myRef.child("Language")
+                .setValue(new Language("Php"));
     }
 }
